@@ -24,6 +24,9 @@ RSpec.describe User, type: :model do
     it "cannot create a user with an existing email" do
       user1 = User.create!(first_name: "John", last_name: "Doe", email: "lame@gmail.com", password: "1234password")
       user2 = User.new(first_name: "Jane", last_name: "Doe", email: "lame@gmail.com", password: "1265password")
+      playlist1 = Playlist.create!(name: "Favorite Songs", user_id: user1.id)
+
+      user1.playlists << playlist1
 
       expect { user2.save! }.to raise_error(ActiveRecord::RecordInvalid)
       expect(user2.save).to eq(false)
