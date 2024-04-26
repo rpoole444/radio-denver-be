@@ -14,7 +14,7 @@ RSpec.describe Playlist, type: :model do
 
   describe 'playlist creation' do
     it 'can be created' do
-      user1 = User.create!(first_name: "John", last_name: "Doe", email: "lame@gmail.com", password: "1234password")
+      user1 = User.create!(first_name: "John", last_name: "Doe", email: "lame@gmail.com", password: "1234password", password_confirmation: "1234password")
       playlist1 = Playlist.create!(name: "Favorite Songs", description: "doop doop", host_name: "fickhead", user: user1)
 
       expect(user1.playlists.count).to eq(1)
