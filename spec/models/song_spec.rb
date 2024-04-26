@@ -12,7 +12,7 @@ RSpec.describe Song, type: :model do
     it { should belong_to :playlist }
   end
 
-  describe 'creation' do
+  describe 'song creation' do
     it 'can be created with valid attributes' do
       user1 = User.create!(first_name: "John", last_name: "Doe", email: "lame@gmail.com", password: "1234password")
       playlist1 = Playlist.create!(name: "Favorite Songs", description: "doop doop", host_name: "fickhead", user: user1)
