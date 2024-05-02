@@ -5,7 +5,7 @@ class Api::V1::PasswordResetsController < ApplicationController
     user = User.find_by(email: params[:email])
     if user
       user.generate_password_token!
-      UserMailer.reset_password_email(user).deliver_later
+      UserMailer.reset_password_email(user).deliver_now
       render json: { message: "Email sent with password reset instructions" }, status: :ok
     else
       render json: { error: "Email address not found" }, status: :not_found

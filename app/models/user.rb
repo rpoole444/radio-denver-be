@@ -23,7 +23,7 @@ class User < ApplicationRecord
       self.reset_password_token = nil
       self.password = password
       self.password_confirmation = password_confirmation
-      save!
+      save
     else
       errors.add(:base, "Password reset token has expired")
       false
