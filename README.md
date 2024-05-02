@@ -30,5 +30,10 @@ rails db:migrate
 bundle exec rspec
 ```
 
+6. Run Server
+```
+rails server
+```
+
 * Nathan Lambertson
 
