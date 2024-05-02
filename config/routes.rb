@@ -6,6 +6,10 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :users, only: [:index, :show, :create, :update, :destroy]
       resources :sessions, only: [:create, :destroy]
+
+      resources :password_resets, only: [:create] do
+        patch ':token', to: 'password_resets#update', on: :collection, as: :update_with_token
+      end
     end
   end
 end
