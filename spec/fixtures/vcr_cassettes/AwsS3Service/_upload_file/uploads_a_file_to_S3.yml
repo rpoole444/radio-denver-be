@@ -10,7 +10,7 @@ http_interactions:
       Accept-Encoding:
       - ''
       Amz-Sdk-Invocation-Id:
-      - 63fa67b2-b2bf-4cec-9cd7-6a1ff7676b50
+      - 614365e8-69f2-4043-ac10-2ae75de1622c
       Content-Type:
       - application/octet-stream
       Expect:
@@ -23,13 +23,13 @@ http_interactions:
       Host:
       - test-bucket.s3.us-east-2.amazonaws.com
       X-Amz-Date:
-      - 20240510T163346Z
+      - 20240510T173316Z
       X-Amz-Content-Sha256:
       - 916f0027a575074ce72a331777c3478d6513f786a591bd892da1a577bf2335f9
       Authorization:
       - AWS4-HMAC-SHA256 Credential=AKIATCKAPOL4LOPHRYZU/20240510/us-east-2/s3/aws4_request,
         SignedHeaders=amz-sdk-invocation-id;content-md5;content-type;host;x-amz-content-sha256;x-amz-date,
-        Signature=dcffff83e3db0d58fb14bdbfdd2ea97667b66fdf854c75c6591cd3da93c541e7
+        Signature=cbc7566ed1c21698c0093f24ffdccbed9eaffdb100e8f064ff2bbc092b005617
       Content-Length:
       - '9'
       Accept:
@@ -42,15 +42,15 @@ http_interactions:
       X-Amz-Bucket-Region:
       - us-east-1
       X-Amz-Request-Id:
-      - RN7TAWK5Z92CCN40
+      - V9VJC0DHH8MAJQHQ
       X-Amz-Id-2:
-      - sbB4y5CM2LdN4ycH6S597FWAfo5dWXhlo4RrHVnBVycaWVe4dqWgFAbWzT1VdK75AaOlMpMfejc=
+      - W3yPY77khx5gosem8FWvEYx4lcnQzYWwSx8e6A051d0oNs6fpYRZdLsTVk1gtEXtAeUjt5ikWHc=
       Content-Type:
       - application/xml
       Transfer-Encoding:
       - chunked
       Date:
-      - Fri, 10 May 2024 16:33:45 GMT
+      - Fri, 10 May 2024 17:33:16 GMT
       Server:
       - AmazonS3
       Connection:
@@ -59,6 +59,6 @@ http_interactions:
       encoding: UTF-8
       string: |-
         <?xml version="1.0" encoding="UTF-8"?>
-        <Error><Code>PermanentRedirect</Code><Message>The bucket you are attempting to access must be addressed using the specified endpoint. Please send all future requests to this endpoint.</Message><Endpoint>s3.amazonaws.com</Endpoint><Bucket>test-bucket</Bucket><RequestId>RN7TAWK5Z92CCN40</RequestId><HostId>sbB4y5CM2LdN4ycH6S597FWAfo5dWXhlo4RrHVnBVycaWVe4dqWgFAbWzT1VdK75AaOlMpMfejc=</HostId></Error>
-  recorded_at: Fri, 10 May 2024 16:33:46 GMT
+        <Error><Code>PermanentRedirect</Code><Message>The bucket you are attempting to access must be addressed using the specified endpoint. Please send all future requests to this endpoint.</Message><Endpoint>s3.amazonaws.com</Endpoint><Bucket>test-bucket</Bucket><RequestId>V9VJC0DHH8MAJQHQ</RequestId><HostId>W3yPY77khx5gosem8FWvEYx4lcnQzYWwSx8e6A051d0oNs6fpYRZdLsTVk1gtEXtAeUjt5ikWHc=</HostId></Error>
+  recorded_at: Fri, 10 May 2024 17:33:17 GMT
 recorded_with: VCR 6.2.0
