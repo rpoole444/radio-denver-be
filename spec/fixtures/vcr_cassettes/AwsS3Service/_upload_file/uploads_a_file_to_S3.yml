@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: put
-    uri: https://test-bucket.s3.us-east-2.amazonaws.com/file.txt
+    uri: https://radio-denver.s3.us-east-2.amazonaws.com/file.txt
     body:
       encoding: ASCII-8BIT
       string: test data
@@ -10,7 +10,7 @@ http_interactions:
       Accept-Encoding:
       - ''
       Amz-Sdk-Invocation-Id:
-      - 614365e8-69f2-4043-ac10-2ae75de1622c
+      - 332cdb22-adce-4ba6-a63d-73a102bc05c3
       Content-Type:
       - application/octet-stream
       Expect:
@@ -21,44 +21,40 @@ http_interactions:
       - aws-sdk-ruby3/3.194.2 ua/2.0 api/s3#1.149.1 os/macos#22 md/arm64 lang/ruby#3.1.4
         md/3.1.4 cfg/retry-mode#legacy
       Host:
-      - test-bucket.s3.us-east-2.amazonaws.com
+      - radio-denver.s3.us-east-2.amazonaws.com
       X-Amz-Date:
-      - 20240510T173316Z
+      - 20240510T173534Z
       X-Amz-Content-Sha256:
       - 916f0027a575074ce72a331777c3478d6513f786a591bd892da1a577bf2335f9
       Authorization:
       - AWS4-HMAC-SHA256 Credential=AKIATCKAPOL4LOPHRYZU/20240510/us-east-2/s3/aws4_request,
         SignedHeaders=amz-sdk-invocation-id;content-md5;content-type;host;x-amz-content-sha256;x-amz-date,
-        Signature=cbc7566ed1c21698c0093f24ffdccbed9eaffdb100e8f064ff2bbc092b005617
+        Signature=d45fabe4aee45922eef362c1baba420acde16d7ca04075f43d74158f4b4fbdb1
       Content-Length:
       - '9'
       Accept:
       - "*/*"
   response:
     status:
-      code: 301
-      message: Moved Permanently
+      code: 200
+      message: OK
     headers:
-      X-Amz-Bucket-Region:
-      - us-east-1
-      X-Amz-Request-Id:
-      - V9VJC0DHH8MAJQHQ
       X-Amz-Id-2:
-      - W3yPY77khx5gosem8FWvEYx4lcnQzYWwSx8e6A051d0oNs6fpYRZdLsTVk1gtEXtAeUjt5ikWHc=
-      Content-Type:
-      - application/xml
-      Transfer-Encoding:
-      - chunked
+      - ZZEpTHW3cBkqd/sflvysUUr7aABIFDa7C/YKNqhA3ExkofAQQp2Yo+ymqzuKXUVGk8AUuRAO548=
+      X-Amz-Request-Id:
+      - JV2TZA944A8EVK2T
       Date:
-      - Fri, 10 May 2024 17:33:16 GMT
+      - Fri, 10 May 2024 17:35:36 GMT
+      X-Amz-Server-Side-Encryption:
+      - AES256
+      Etag:
+      - '"eb733a00c0c9d336e65691a37ab54293"'
       Server:
       - AmazonS3
-      Connection:
-      - close
+      Content-Length:
+      - '0'
     body:
       encoding: UTF-8
-      string: |-
-        <?xml version="1.0" encoding="UTF-8"?>
-        <Error><Code>PermanentRedirect</Code><Message>The bucket you are attempting to access must be addressed using the specified endpoint. Please send all future requests to this endpoint.</Message><Endpoint>s3.amazonaws.com</Endpoint><Bucket>test-bucket</Bucket><RequestId>V9VJC0DHH8MAJQHQ</RequestId><HostId>W3yPY77khx5gosem8FWvEYx4lcnQzYWwSx8e6A051d0oNs6fpYRZdLsTVk1gtEXtAeUjt5ikWHc=</HostId></Error>
-  recorded_at: Fri, 10 May 2024 17:33:17 GMT
+      string: ''
+  recorded_at: Fri, 10 May 2024 17:35:35 GMT
 recorded_with: VCR 6.2.0

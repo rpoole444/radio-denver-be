@@ -5,13 +5,11 @@ class AwsS3Service
     access_key_id = ENV['AWS_ACCESS_KEY_ID']
     secret_access_key = ENV['AWS_SECRET_ACCESS_KEY']
     region = ENV['AWS_REGION']
-    #endpoint = ENV['AWS_S3_ENDPOINT']
 
     @s3_client = Aws::S3::Client.new(
       access_key_id: access_key_id,
       secret_access_key: secret_access_key,
       region: region
-      #endpoint: endpoint
     )
     @bucket_name = bucket_name
   end

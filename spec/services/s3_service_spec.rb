@@ -2,7 +2,7 @@ require 'rails_helper'
 require 'tempfile'
 
 RSpec.describe AwsS3Service, vcr: true, type: :service do
-  let(:bucket_name) { 'test-bucket' }
+  let(:bucket_name) { 'radio-denver' }
   let(:key) { 'file.txt' }
 
   subject { described_class.new(bucket_name) }
