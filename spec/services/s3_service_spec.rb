@@ -15,6 +15,7 @@ RSpec.describe AwsS3Service, vcr: true, type: :service do
         file.rewind
 
         # Upload the temporary file
+        expect(file).to be_truthy
         expect(subject.upload_file(file.path, key)).to_not be_nil
       end
     end
