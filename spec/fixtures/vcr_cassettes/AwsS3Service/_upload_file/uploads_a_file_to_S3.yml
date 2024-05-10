@@ -1,0 +1,64 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: https://test-bucket.s3.us-east-2.amazonaws.com/file.txt
+    body:
+      encoding: ASCII-8BIT
+      string: test data
+    headers:
+      Accept-Encoding:
+      - ''
+      Amz-Sdk-Invocation-Id:
+      - 63fa67b2-b2bf-4cec-9cd7-6a1ff7676b50
+      Content-Type:
+      - application/octet-stream
+      Expect:
+      - 100-continue
+      Content-Md5:
+      - 63M6AMDJ0zbmVpGjerVCkw==
+      User-Agent:
+      - aws-sdk-ruby3/3.194.2 ua/2.0 api/s3#1.149.1 os/macos#22 md/arm64 lang/ruby#3.1.4
+        md/3.1.4 cfg/retry-mode#legacy
+      Host:
+      - test-bucket.s3.us-east-2.amazonaws.com
+      X-Amz-Date:
+      - 20240510T163346Z
+      X-Amz-Content-Sha256:
+      - 916f0027a575074ce72a331777c3478d6513f786a591bd892da1a577bf2335f9
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIATCKAPOL4LOPHRYZU/20240510/us-east-2/s3/aws4_request,
+        SignedHeaders=amz-sdk-invocation-id;content-md5;content-type;host;x-amz-content-sha256;x-amz-date,
+        Signature=dcffff83e3db0d58fb14bdbfdd2ea97667b66fdf854c75c6591cd3da93c541e7
+      Content-Length:
+      - '9'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 301
+      message: Moved Permanently
+    headers:
+      X-Amz-Bucket-Region:
+      - us-east-1
+      X-Amz-Request-Id:
+      - RN7TAWK5Z92CCN40
+      X-Amz-Id-2:
+      - sbB4y5CM2LdN4ycH6S597FWAfo5dWXhlo4RrHVnBVycaWVe4dqWgFAbWzT1VdK75AaOlMpMfejc=
+      Content-Type:
+      - application/xml
+      Transfer-Encoding:
+      - chunked
+      Date:
+      - Fri, 10 May 2024 16:33:45 GMT
+      Server:
+      - AmazonS3
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: |-
+        <?xml version="1.0" encoding="UTF-8"?>
+        <Error><Code>PermanentRedirect</Code><Message>The bucket you are attempting to access must be addressed using the specified endpoint. Please send all future requests to this endpoint.</Message><Endpoint>s3.amazonaws.com</Endpoint><Bucket>test-bucket</Bucket><RequestId>RN7TAWK5Z92CCN40</RequestId><HostId>sbB4y5CM2LdN4ycH6S597FWAfo5dWXhlo4RrHVnBVycaWVe4dqWgFAbWzT1VdK75AaOlMpMfejc=</HostId></Error>
+  recorded_at: Fri, 10 May 2024 16:33:46 GMT
+recorded_with: VCR 6.2.0

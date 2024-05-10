@@ -1,13 +1,17 @@
 require 'aws-sdk-s3'
 
 class AwsS3Service
-  def initialize
+  def initialize(bucket_name)
+    access_key_id = ENV['AWS_ACCESS_KEY_ID']
+    secret_access_key = ENV['AWS_SECRET_ACCESS_KEY']
+    region = ENV['AWS_REGION']
+
     @s3_client = Aws::S3::Client.new(
-      access_key_id: ENV['AWS_ACCESS_KEY_ID'],
-      secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
-      region: ENV['AWS_REGION']
+      access_key_id: access_key_id,
+      secret_access_key: secret_access_key,
+      region: region
     )
-    @bucket_name = ENV['S3_BUCKET_NAME']
+    @bucket_name = bucket_name
   end
 
   def upload_file(file_path, object_key)
