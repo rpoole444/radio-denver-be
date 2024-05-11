@@ -25,6 +25,6 @@ class AwsS3Service
   end
 
   def get_file_url(object_key)
-    @s3_client.get_object(bucket: @bucket_name, key: object_key).presigned_url(:get)
+    @s3_client.get_object(bucket: @bucket_name, key: object_key)#.presigned_url(:get)
   end
 end
