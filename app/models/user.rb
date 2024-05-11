@@ -8,7 +8,7 @@ class User < ApplicationRecord
   validates :password_digest, presence: true
 
   has_many :playlists, dependent: :destroy
-  has_many :audio_files
+  has_many :audio_files, dependent: :destroy
 
   def generate_password_token!
     self.reset_password_token = SecureRandom.hex(10)
