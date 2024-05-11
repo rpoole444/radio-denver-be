@@ -1,5 +1,3 @@
-require 'aws-sdk-s3'
-
 class AwsS3Service
   def initialize(bucket_name)
     access_key_id = ENV['AWS_ACCESS_KEY_ID']
