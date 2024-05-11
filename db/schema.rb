@@ -10,18 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_05_11_195020) do
+ActiveRecord::Schema[7.1].define(version: 2024_05_11_204602) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "files", force: :cascade do |t|
+  create_table "audio_files", force: :cascade do |t|
     t.string "name"
     t.integer "size"
     t.string "s3_key"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_files_on_user_id"
+    t.index ["user_id"], name: "index_audio_files_on_user_id"
   end
 
   create_table "playlists", force: :cascade do |t|
@@ -60,7 +60,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_11_195020) do
     t.datetime "reset_password_sent_at"
   end
 
-  add_foreign_key "files", "users"
+  add_foreign_key "audio_files", "users"
   add_foreign_key "playlists", "users"
   add_foreign_key "songs", "playlists"
 end
