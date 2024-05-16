@@ -8,6 +8,7 @@ class Api::V1::AudioFilesController < ApplicationController
   end
 
   def show
+    @audio_file = @current_user.audio_files.find(params[:id])
     render json: @audio_file
   end
 
@@ -22,6 +23,7 @@ class Api::V1::AudioFilesController < ApplicationController
   end
 
   def update
+    @audio_file = @current_user.audio_files.find(params[:id])
     if @audio_file.update(audio_file_params)
       render json: @audio_file
     else
