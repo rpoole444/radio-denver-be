@@ -13,7 +13,9 @@ RSpec.describe "regular old user endpoints", type: :request do
 
       expect(response).to have_http_status(:success)
       expect(json_response["data"].length).to eq(3)
-      expect(json_response["data"][0]["attributes"]["first_name"]).to eq("John")
+      expect(json_response["data"][0]["attributes"]["first_name"]).to eq(user1.first_name)
+      expect(json_response["data"][1]["attributes"]["first_name"]).to eq(user2.first_name)
+      expect(json_response["data"][2]["attributes"]["first_name"]).to eq(user3.first_name)
     end
   end
 

@@ -6,7 +6,9 @@ class User < ApplicationRecord
   validates :phone_number, length: { minimum: 10, maximum: 15 }, allow_blank: true
   validates :email, presence: true, uniqueness: true
   validates :password_digest, presence: true
+
   has_many :playlists, dependent: :destroy
+  has_many :audio_files, dependent: :destroy
 
   def generate_password_token!
     self.reset_password_token = SecureRandom.hex(10)
