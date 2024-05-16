@@ -32,6 +32,7 @@ class Api::V1::AudioFilesController < ApplicationController
   end
 
   def destroy
+    @audio_file = @current_user.audio_files.find(params[:id])
     @audio_file.destroy
     head :no_content
   end

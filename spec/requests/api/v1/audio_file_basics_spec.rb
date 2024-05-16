@@ -82,4 +82,27 @@ RSpec.describe "Files requests", type: :request do
       expect(assigns(:audio_file)).to eq(audio_file1)
     end
   end
+
+  describe "DELETE /users/:user_id/audio_files/:id", type: :request do
+    it "deletes a file belonging to a user" do
+      user = User.create!(first_name: "John", last_name: "Doe", email: "lamb@gmail.com", password: "1234password", password_confirmation: "1234password")
+      audio_file1 = user.audio_files.create!(name: "file1", size: 100, s3_key: "key1")
+      audio_file2 = user.audio_files.create!(name: "file2", size: 200, s3_key: "key2")
+      headers = { 'Authorization' => "Bearer #{JsonWebTokenService.encode(user_id: user.id)}" }
+
+      delete "/api/v1/users/#{user.id}/audio_files/#{audio_file1.id}", headers: headers
+
+      expect(response).to have_http_status(:no_content)
+
+      get "/api/v1/users/#{user.id}/audio_files", headers: headers
+
+      expect(response).to have_http_status(:ok)
+
+      json_response = JSON.parse(response.body)
+
+      expect(json_response[0]["name"]).to eq("file2")
+      expect(json_response[0]["size"]).to eq(audio_file2.size)
+      expect(json_response.count).to eq(1)
+    end
+  end
 end
