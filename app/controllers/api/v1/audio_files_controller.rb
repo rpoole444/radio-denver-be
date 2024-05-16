@@ -1,5 +1,5 @@
 class Api::V1::AudioFilesController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_request
   before_action :set_audio_file, only: [:show, :update, :destroy]
 
   # GET /audio_files
@@ -15,7 +15,7 @@ class Api::V1::AudioFilesController < ApplicationController
 
   # POST /audio_files
   def create
-    @audio_file = current_user.audio_files.build(audio_file_params)
+    @audio_file = @current_user.audio_files.build(audio_file_params)
 
     if @audio_file.save
       render json: @audio_file, status: :created
@@ -40,6 +40,11 @@ class Api::V1::AudioFilesController < ApplicationController
   end
 
   private
+
+  def authenticate_request
+    @current_user = AuthorizeApiRequestService.new(request.headers).result
+    render json: { error: 'Not Authorized' }, status: :unauthorized unless @current_user
+  end
 
   def set_audio_file
     @audio_file = current_user.audio_files.find(params[:id])
