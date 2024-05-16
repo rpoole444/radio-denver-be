@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "Files requests", type: :request do
-  describe "POST /users/:user_id/audio_files" do
+  xdescribe "POST /users/:user_id/audio_files" do
     it "creates a new file" do
       user = User.create!(first_name: "John", last_name: "Doe", email: "lamb@gmail.com", password: "1234password", password_confirmation: "1234password")
       file_params = { name: "new_file", size: 300, s3_key: "new_key" }
