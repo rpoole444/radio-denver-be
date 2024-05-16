@@ -5,6 +5,7 @@ require_relative '../config/environment'
 # Prevent database truncation if the environment is production
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'rspec/rails'
+require 'rails-controller-testing'
 require "simplecov"
 SimpleCov.start
 # Add additional requires below this line. Rails is not loaded until this point!
@@ -81,4 +82,14 @@ VCR.configure do |config|
   # config.filter_sensitive_data('YOUTUBE') { Rails.application.credentials[:api_key][:youtube_data] }
   # config.filter_sensitive_data('PEXEL') { Rails.application.credentials[:api_key][:pexel] }
   # config.default_cassette_options = { match_requests_on: [:method, :path] }
+end
+
+def sign_in(user)
+  post api_v1_sessions_path, params: { session: { email: user.email, password: user.password } }
+end
+
+RSpec.configure do |config|
+  config.include Rails::Controller::Testing::TestProcess, type: :controller
+  config.include Rails::Controller::Testing::TemplateAssertions, type: :controller
+  config.include Rails::Controller::Testing::Integration, type: :request
 end

@@ -1,13 +1,19 @@
 require 'rails_helper'
 
 RSpec.describe "Files requests", type: :request do
-  xdescribe "POST /users/:user_id/audio_files" do
+  describe "POST /users/:user_id/audio_files" do
     it "creates a new file" do
       user = User.create!(first_name: "John", last_name: "Doe", email: "lamb@gmail.com", password: "1234password", password_confirmation: "1234password")
       file_params = { name: "new_file", size: 300, s3_key: "new_key" }
 
+      # Generate a JWT token for the user
+      token = JsonWebTokenService.encode(user_id: user.id)
+
+      # Set the 'Authorization' header with the generated token
+      headers = { 'Authorization' => "Bearer #{token}" }
+
       expect {
-        post "/api/v1/users/#{user.id}/audio_files", params: { audio_file: file_params }
+        post "/api/v1/users/#{user.id}/audio_files", params: { audio_file: file_params }, headers: headers
       }.to change(AudioFile, :count).by(1)
 
       expect(response).to have_http_status(:created)
