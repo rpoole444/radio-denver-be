@@ -2,18 +2,16 @@ class Api::V1::AudioFilesController < ApplicationController
   before_action :authenticate_request
   before_action :set_audio_file, only: [:show, :update, :destroy]
 
-  # GET /audio_files
   def index
-    @audio_files = current_user.audio_files
+    @audio_files = @current_user.audio_files
     render json: @audio_files
   end
 
-  # GET /audio_files/1
   def show
+    @audio_file = @current_user.audio_files.find(params[:id])
     render json: @audio_file
   end
 
-  # POST /audio_files
   def create
     @audio_file = @current_user.audio_files.build(audio_file_params)
 
@@ -24,8 +22,8 @@ class Api::V1::AudioFilesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /audio_files/1
   def update
+    @audio_file = @current_user.audio_files.find(params[:id])
     if @audio_file.update(audio_file_params)
       render json: @audio_file
     else
@@ -33,8 +31,8 @@ class Api::V1::AudioFilesController < ApplicationController
     end
   end
 
-  # DELETE /audio_files/1
   def destroy
+    @audio_file = @current_user.audio_files.find(params[:id])
     @audio_file.destroy
     head :no_content
   end
@@ -47,7 +45,7 @@ class Api::V1::AudioFilesController < ApplicationController
   end
 
   def set_audio_file
-    @audio_file = current_user.audio_files.find(params[:id])
+    @audio_file = @current_user.audio_files.find(params[:id])
   end
 
   def audio_file_params
