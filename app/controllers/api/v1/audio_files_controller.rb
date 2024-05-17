@@ -8,13 +8,12 @@ class Api::V1::AudioFilesController < ApplicationController
   end
 
   def show
-    @audio_file = @current_user.audio_files.find(params[:id])
+    set_audio_file
     render json: @audio_file
   end
 
   def create
     @audio_file = @current_user.audio_files.build(audio_file_params)
-
     if @audio_file.save
       render json: @audio_file, status: :created
     else
@@ -23,7 +22,7 @@ class Api::V1::AudioFilesController < ApplicationController
   end
 
   def update
-    @audio_file = @current_user.audio_files.find(params[:id])
+    set_audio_file
     if @audio_file.update(audio_file_params)
       render json: @audio_file
     else
@@ -32,7 +31,7 @@ class Api::V1::AudioFilesController < ApplicationController
   end
 
   def destroy
-    @audio_file = @current_user.audio_files.find(params[:id])
+    set_audio_file
     @audio_file.destroy
     head :no_content
   end
