@@ -6,7 +6,7 @@ This is a project being brewed by myself and Reid Poole that will serve as a sor
 
 1. Clone repo down to your machine.
 
-2. Install Rails 7.1.3.2 and Ruby version 3.1.4
+2. Install Rails 7.1.3.3 and Ruby version 3.1.4
 ```
 rbenv install 3.1.4
 rbenv local 3.1.4

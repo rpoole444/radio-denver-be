@@ -5,3 +5,5 @@ Aws.config.update(
     ENV['AWS_SECRET_ACCESS_KEY']
   )
 )
+
+S3_BUCKET = Aws::S3::Resource.new.bucket('radio-denver')

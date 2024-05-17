@@ -8,12 +8,15 @@ class Api::V1::AudioFilesController < ApplicationController
   end
 
   def show
-    @audio_file = @current_user.audio_files.find(params[:id])
     render json: @audio_file
   end
 
   def create
     @audio_file = @current_user.audio_files.build(audio_file_params)
+    if params[:audio_file][:file]
+      s3_key = upload_to_s3(params[:audio_file][:file])
+      @audio_file.s3_key = s3_key
+    end
 
     if @audio_file.save
       render json: @audio_file, status: :created
@@ -23,7 +26,11 @@ class Api::V1::AudioFilesController < ApplicationController
   end
 
   def update
-    @audio_file = @current_user.audio_files.find(params[:id])
+    if params[:audio_file][:file]
+      s3_key = upload_to_s3(params[:audio_file][:file])
+      @audio_file.s3_key = s3_key
+    end
+
     if @audio_file.update(audio_file_params)
       render json: @audio_file
     else
@@ -32,7 +39,7 @@ class Api::V1::AudioFilesController < ApplicationController
   end
 
   def destroy
-    @audio_file = @current_user.audio_files.find(params[:id])
+    delete_from_s3(@audio_file.s3_key)
     @audio_file.destroy
     head :no_content
   end
@@ -49,6 +56,17 @@ class Api::V1::AudioFilesController < ApplicationController
   end
 
   def audio_file_params
-    params.require(:audio_file).permit(:name, :size, :s3_key)
+    params.require(:audio_file).permit(:name, :size)
+  end
+
+  def upload_to_s3(file)
+    obj = S3_BUCKET.object("audio_files/#{SecureRandom.uuid}/#{file.original_filename}")
+    obj.upload_file(file.path)  # Removed acl: 'public-read'
+    obj.public_url
+  end
+
+  def delete_from_s3(s3_key)
+    obj = S3_BUCKET.object(s3_key)
+    obj.delete
   end
 end
