@@ -1,10 +1,11 @@
 require 'rails_helper'
 
-RSpec.describe "Files requests", type: :request do
+RSpec.describe "Files requests", vcr: true, type: :request do
   describe "POST /users/:user_id/audio_files" do
     it "creates a new file" do
       user = User.create!(first_name: "John", last_name: "Doe", email: "lamb@gmail.com", password: "1234password", password_confirmation: "1234password")
-      file_params = { name: "new_file", size: 300, s3_key: "new_key" }
+      file = fixture_file_upload(Rails.root.join('spec', 'fixtures', 'files', 'test_file.mp3'), 'audio/mp3')
+      file_params = { name: "new_file", size: 300, file: file }
       token = JsonWebTokenService.encode(user_id: user.id)
       headers = { 'Authorization' => "Bearer #{token}" }
 
@@ -20,6 +21,7 @@ RSpec.describe "Files requests", type: :request do
       expect(assigns(:audio_file)).to be_a(AudioFile)
       expect(assigns(:audio_file)).to be_persisted
     end
+
   end
 
   describe "GET /users/:user_id/audio_files", type: :request do
@@ -68,9 +70,10 @@ RSpec.describe "Files requests", type: :request do
     it "updates a file belonging to a user" do
       user = User.create!(first_name: "John", last_name: "Doe", email: "lamb@gmail.com", password: "1234password", password_confirmation: "1234password")
       audio_file1 = user.audio_files.create!(name: "file1", size: 100, s3_key: "key1")
+      file = fixture_file_upload(Rails.root.join('spec', 'fixtures', 'files', 'new_test_file.mp3'), 'audio/mp3')
       headers = { 'Authorization' => "Bearer #{JsonWebTokenService.encode(user_id: user.id)}" }
 
-      put "/api/v1/users/#{user.id}/audio_files/#{audio_file1.id}", params: { audio_file: { name: "new_name", size: 333, s3_key: "new_key" } }, headers: headers
+      put "/api/v1/users/#{user.id}/audio_files/#{audio_file1.id}", params: { audio_file: { name: "new_name", size: 333, file: file } }, headers: headers
 
       expect(response).to have_http_status(:ok)
 
@@ -78,9 +81,10 @@ RSpec.describe "Files requests", type: :request do
 
       expect(json_response["name"]).to eq("new_name")
       expect(json_response["size"]).to eq(333)
-      expect(json_response["s3_key"]).to eq("new_key")
+      expect(json_response["s3_key"]).not_to eq("key1")
       expect(assigns(:audio_file)).to eq(audio_file1)
     end
+
   end
 
   describe "DELETE /users/:user_id/audio_files/:id", type: :request do

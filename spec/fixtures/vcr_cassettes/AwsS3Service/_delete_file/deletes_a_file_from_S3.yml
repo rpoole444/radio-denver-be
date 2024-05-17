@@ -10,7 +10,7 @@ http_interactions:
       Accept-Encoding:
       - ''
       Amz-Sdk-Invocation-Id:
-      - 87077d94-9f24-465b-90a1-0fccc2255924
+      - 4011d422-e9a1-44d6-9280-7381aac9a1ee
       Content-Type:
       - application/octet-stream
       Expect:
@@ -18,18 +18,18 @@ http_interactions:
       Content-Md5:
       - 63M6AMDJ0zbmVpGjerVCkw==
       User-Agent:
-      - aws-sdk-ruby3/3.194.2 ua/2.0 api/s3#1.149.1 os/macos#22 md/arm64 lang/ruby#3.1.4
+      - aws-sdk-ruby3/3.196.1 ua/2.0 api/s3#1.151.0 os/macos#22 md/arm64 lang/ruby#3.1.4
         md/3.1.4 cfg/retry-mode#legacy
       Host:
       - radio-denver.s3.us-east-2.amazonaws.com
       X-Amz-Date:
-      - 20240511T132551Z
+      - 20240517T145746Z
       X-Amz-Content-Sha256:
       - 916f0027a575074ce72a331777c3478d6513f786a591bd892da1a577bf2335f9
       Authorization:
-      - AWS4-HMAC-SHA256 Credential=AKIATCKAPOL4LOPHRYZU/20240511/us-east-2/s3/aws4_request,
+      - AWS4-HMAC-SHA256 Credential=AKIATCKAPOL4LOPHRYZU/20240517/us-east-2/s3/aws4_request,
         SignedHeaders=amz-sdk-invocation-id;content-md5;content-type;host;x-amz-content-sha256;x-amz-date,
-        Signature=3d8aae14818ce1f2daf7de2ff769e799ac463b732013937a9834773ff13791c5
+        Signature=ca3b0fa5c417f1061a2d14e8d62d3522b8d1a52d425067e6c8af84dcac23dfe2
       Content-Length:
       - '9'
       Accept:
@@ -40,11 +40,11 @@ http_interactions:
       message: OK
     headers:
       X-Amz-Id-2:
-      - Hph9bMrSumOOcRCwiygipGHCYmVBRWGgZ4Dq1HIE6FvbTgThvQfCqmMWiJc9lv3mr/NYiPdmjAdv9OVjV6Pztw==
+      - FpIp8FdXuFgW0n3jJTTSx4R6PtiL+kT6WinFYM3v+cBkR1DRN6ZDeaE2k4VLAtPxA+Zm0/M+FLxBhowCY2X8tw==
       X-Amz-Request-Id:
-      - X8RCKZ9YVR2FHCD9
+      - 0HSS86YYV4ER2Z6B
       Date:
-      - Sat, 11 May 2024 13:25:52 GMT
+      - Fri, 17 May 2024 14:57:47 GMT
       X-Amz-Server-Side-Encryption:
       - AES256
       Etag:
@@ -56,7 +56,7 @@ http_interactions:
     body:
       encoding: UTF-8
       string: ''
-  recorded_at: Sat, 11 May 2024 13:25:51 GMT
+  recorded_at: Fri, 17 May 2024 14:57:47 GMT
 - request:
     method: delete
     uri: https://radio-denver.s3.us-east-2.amazonaws.com/file.txt
@@ -67,20 +67,20 @@ http_interactions:
       Accept-Encoding:
       - ''
       Amz-Sdk-Invocation-Id:
-      - 57d6b9e8-39a0-4d9e-94cb-224cfe87630c
+      - 8b82a179-0bbe-4c8d-a559-6266dbd91705
       User-Agent:
-      - aws-sdk-ruby3/3.194.2 ua/2.0 api/s3#1.149.1 os/macos#22 md/arm64 lang/ruby#3.1.4
+      - aws-sdk-ruby3/3.196.1 ua/2.0 api/s3#1.151.0 os/macos#22 md/arm64 lang/ruby#3.1.4
         md/3.1.4 cfg/retry-mode#legacy
       Host:
       - radio-denver.s3.us-east-2.amazonaws.com
       X-Amz-Date:
-      - 20240511T132551Z
+      - 20240517T145747Z
       X-Amz-Content-Sha256:
       - e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
       Authorization:
-      - AWS4-HMAC-SHA256 Credential=AKIATCKAPOL4LOPHRYZU/20240511/us-east-2/s3/aws4_request,
+      - AWS4-HMAC-SHA256 Credential=AKIATCKAPOL4LOPHRYZU/20240517/us-east-2/s3/aws4_request,
         SignedHeaders=amz-sdk-invocation-id;host;x-amz-content-sha256;x-amz-date,
-        Signature=a1f22a0cee1cef280f5ca33e7e70f6d4f04705db7477565d1d623f420cc0085e
+        Signature=c93891eaf900e5c11c8e3ecbf464a31ceb61b836f34ea957b9839557546d5f3f
       Accept:
       - "*/*"
   response:
@@ -89,15 +89,15 @@ http_interactions:
       message: No Content
     headers:
       X-Amz-Id-2:
-      - 2MuJWZ5PiwEvfrFd5KJ9RV250Z2VudWqXfCYymExCyPE6cZFJS1ciBZ2p8IIx0bCtxf++CM9/7ypBNdwOKS+/w==
+      - fz+PiPjTAenqJsCXrBG6UNI066fzoz2tM6cFHFVfE7tSAFmdM/zVeRS9GEnHSnx6KZ4KgpGFtzINht0I9nxmog==
       X-Amz-Request-Id:
-      - X8R4755KH7ERFEQX
+      - ZBDJQPHDABB3DN9M
       Date:
-      - Sat, 11 May 2024 13:25:52 GMT
+      - Fri, 17 May 2024 14:57:48 GMT
       Server:
       - AmazonS3
     body:
       encoding: UTF-8
       string: ''
-  recorded_at: Sat, 11 May 2024 13:25:51 GMT
+  recorded_at: Fri, 17 May 2024 14:57:47 GMT
 recorded_with: VCR 6.2.0

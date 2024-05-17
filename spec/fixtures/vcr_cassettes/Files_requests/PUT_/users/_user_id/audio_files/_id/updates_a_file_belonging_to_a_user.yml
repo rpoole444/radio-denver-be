@@ -1,0 +1,162 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: https://radio-denver.s3.us-east-2.amazonaws.com/audio_files/ac893807-f045-4ce4-8e2a-b0b4ae2235e5/new_test_file.mp3
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Accept-Encoding:
+      - ''
+      Amz-Sdk-Invocation-Id:
+      - 49954745-13b5-470f-b8d0-2fda311230ba
+      Content-Type:
+      - application/octet-stream
+      User-Agent:
+      - aws-sdk-ruby3/3.196.1 ua/2.0 api/s3#1.151.0 os/macos#22 md/arm64 lang/ruby#3.1.4
+        md/3.1.4 cfg/retry-mode#legacy ft/resource ft/s3-transfer
+      Host:
+      - radio-denver.s3.us-east-2.amazonaws.com
+      X-Amz-Date:
+      - 20240517T150809Z
+      X-Amz-Content-Sha256:
+      - e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIATCKAPOL4LOPHRYZU/20240517/us-east-2/s3/aws4_request,
+        SignedHeaders=amz-sdk-invocation-id;content-type;host;x-amz-content-sha256;x-amz-date,
+        Signature=045bbb8d660f78aaa53e541aa1e05816b893e33f8a6fab371c32ff1c87a12b75
+      Content-Length:
+      - '0'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amz-Id-2:
+      - tGTD3aEOeHdtTBfGhx7SxNpnXVeM2f7IXIHsj1RKABlbfPpKsGgAFWB7j0+XdTYHLgZGtxV+16c+C9sSbDRgMQ==
+      X-Amz-Request-Id:
+      - 8EPK233CJJXSB83Z
+      Date:
+      - Fri, 17 May 2024 15:08:10 GMT
+      X-Amz-Server-Side-Encryption:
+      - AES256
+      Etag:
+      - '"d41d8cd98f00b204e9800998ecf8427e"'
+      Server:
+      - AmazonS3
+      Content-Length:
+      - '0'
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Fri, 17 May 2024 15:08:09 GMT
+- request:
+    method: put
+    uri: https://radio-denver.s3.us-east-2.amazonaws.com/audio_files/a7a0abcc-4c9f-440b-b3d5-87ba2b636822/new_test_file.mp3
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Accept-Encoding:
+      - ''
+      Amz-Sdk-Invocation-Id:
+      - 1c455816-a2d2-464f-bf60-9f92af2b859d
+      Content-Type:
+      - application/octet-stream
+      User-Agent:
+      - aws-sdk-ruby3/3.196.1 ua/2.0 api/s3#1.151.0 os/macos#22 md/arm64 lang/ruby#3.1.4
+        md/3.1.4 cfg/retry-mode#legacy ft/resource ft/s3-transfer
+      Host:
+      - radio-denver.s3.us-east-2.amazonaws.com
+      X-Amz-Date:
+      - 20240517T151040Z
+      X-Amz-Content-Sha256:
+      - e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIATCKAPOL4LOPHRYZU/20240517/us-east-2/s3/aws4_request,
+        SignedHeaders=amz-sdk-invocation-id;content-type;host;x-amz-content-sha256;x-amz-date,
+        Signature=dae758d06e6eaa797461bf92f82f8aed5c30b8a85f6bb471d9b378feb627b61d
+      Content-Length:
+      - '0'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amz-Id-2:
+      - YL8ZTyyw11HMMH2pas9hvy8uq5FMWSkJd2ig2QTwm5HsSdpZ4lsq+R3EgSFkz40LSxo4QlHt1mA=
+      X-Amz-Request-Id:
+      - B29HEEMBKYXMNR5M
+      Date:
+      - Fri, 17 May 2024 15:10:41 GMT
+      X-Amz-Server-Side-Encryption:
+      - AES256
+      Etag:
+      - '"d41d8cd98f00b204e9800998ecf8427e"'
+      Server:
+      - AmazonS3
+      Content-Length:
+      - '0'
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Fri, 17 May 2024 15:10:40 GMT
+- request:
+    method: put
+    uri: https://radio-denver.s3.us-east-2.amazonaws.com/audio_files/38eb435a-76b3-415f-8b90-7d1ae183cc4f/new_test_file.mp3
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Accept-Encoding:
+      - ''
+      Amz-Sdk-Invocation-Id:
+      - 88b85b57-0ce8-46a9-b16d-ece5e41d3ef8
+      Content-Type:
+      - application/octet-stream
+      User-Agent:
+      - aws-sdk-ruby3/3.196.1 ua/2.0 api/s3#1.151.0 os/macos#22 md/arm64 lang/ruby#3.1.4
+        md/3.1.4 cfg/retry-mode#legacy ft/resource ft/s3-transfer
+      Host:
+      - radio-denver.s3.us-east-2.amazonaws.com
+      X-Amz-Date:
+      - 20240517T151052Z
+      X-Amz-Content-Sha256:
+      - e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIATCKAPOL4LOPHRYZU/20240517/us-east-2/s3/aws4_request,
+        SignedHeaders=amz-sdk-invocation-id;content-type;host;x-amz-content-sha256;x-amz-date,
+        Signature=440a05d76fd11e6a8431cfd3cc1c74f01dbfc555309521fa2108af6409eec206
+      Content-Length:
+      - '0'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amz-Id-2:
+      - 38H28g7rL/qc69eGA6MzWOWFEFVOAzvB6wyxUGYbcwT+4bcikMgBbqhlIt/PjNrcKXnEueR10yQ=
+      X-Amz-Request-Id:
+      - DDG44GRRNEEV7ANV
+      Date:
+      - Fri, 17 May 2024 15:10:53 GMT
+      X-Amz-Server-Side-Encryption:
+      - AES256
+      Etag:
+      - '"d41d8cd98f00b204e9800998ecf8427e"'
+      Server:
+      - AmazonS3
+      Content-Length:
+      - '0'
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Fri, 17 May 2024 15:10:52 GMT
+recorded_with: VCR 6.2.0
